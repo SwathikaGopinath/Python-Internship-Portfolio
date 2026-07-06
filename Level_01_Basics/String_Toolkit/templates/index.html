@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>String Toolkit</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>✨ String Toolkit</h1>
+
+    <p class="subtitle">
+        Analyze and Transform Your Text Instantly
+    </p>
+
+    <form method="POST">
+
+        <label>Enter Your Sentence</label>
+
+        <textarea
+            name="string"
+            rows="5"
+            placeholder="Type your sentence here..."
+            required></textarea>
+
+        <button type="submit">
+
+            Analyze Text
+
+        </button>
+
+    </form>
+
+    {% if result %}
+
+    <div class="results">
+
+        {% for title, value in result.items() %}
+
+        <div class="card">
+
+            <h3>{{ title }}</h3>
+
+            <p>{{ value }}</p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>

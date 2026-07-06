@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Data Type Explorer</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🧪 Data Type Explorer</h1>
+
+    <p class="subtitle">
+        Explore Python Data Types using Flask
+    </p>
+
+    <form method="POST">
+
+        <label>Name</label>
+        <input type="text"
+               name="string"
+               placeholder="Enter any text"
+               required>
+
+        <label>Age</label>
+        <input type="number"
+               name="integer"
+               placeholder="Enter an integer"
+               required>
+
+        <label>Height</label>
+        <input type="number"
+               step="any"
+               name="float"
+               placeholder="Enter a decimal number"
+               required>
+
+        <label>Female</label>
+
+        <select name="boolean">
+
+            <option value="true">True</option>
+
+            <option value="false">False</option>
+
+        </select>
+
+        <button type="submit">
+
+            Explore Data Types
+
+        </button>
+
+    </form>
+
+    {% if results %}
+
+    <div class="results">
+
+        <h2>Results</h2>
+
+        <table>
+
+            <tr>
+
+                <th>Data Type</th>
+
+                <th>Value</th>
+
+                <th>Python Type</th>
+
+            </tr>
+
+            {% for datatype, info in results.items() %}
+
+            <tr>
+
+                <td>{{ datatype }}</td>
+
+                <td>{{ info[0] }}</td>
+
+                <td>{{ info[1] }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>
