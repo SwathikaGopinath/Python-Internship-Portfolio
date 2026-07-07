@@ -1,0 +1,204 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#121212;
+    color:white;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    padding:40px 20px;
+}
+
+.container{
+    width:100%;
+    max-width:800px;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.header h1{
+    font-size:2.5rem;
+    color:#FFD54F;
+}
+
+.header p{
+    color:#bdbdbd;
+    margin-top:8px;
+}
+
+.add-form{
+    display:flex;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.add-form input{
+    flex:1;
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    background:#1f1f1f;
+    color:white;
+    font-size:16px;
+}
+
+.add-form input::placeholder{
+    color:#888;
+}
+
+.add-form button{
+    background:#FFD54F;
+    color:black;
+    border:none;
+    border-radius:10px;
+    padding:15px 22px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.add-form button:hover{
+    transform:translateY(-2px);
+    background:#ffca28;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.buttons a{
+    text-decoration:none;
+}
+
+.sort-btn,
+.clear-btn{
+    padding:14px 22px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.sort-btn{
+    background:#FFD54F;
+    color:black;
+}
+
+.sort-btn:hover{
+    background:#ffca28;
+    transform:translateY(-2px);
+}
+
+.clear-btn{
+    background:#e53935;
+    color:white;
+}
+
+.clear-btn:hover{
+    background:#c62828;
+    transform:translateY(-2px);
+}
+
+.movie-container{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.movie-card{
+    background:#1d1d1d;
+    border-left:5px solid #FFD54F;
+    border-radius:12px;
+    padding:18px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:.3s;
+}
+
+.movie-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 18px rgba(0,0,0,.35);
+}
+
+.movie-name{
+    font-size:18px;
+    font-weight:600;
+}
+
+.movie-name i{
+    color:#FFD54F;
+    margin-right:10px;
+}
+
+.delete-btn{
+    background:#ef5350;
+    color:white;
+    border:none;
+    border-radius:8px;
+    padding:10px 18px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.delete-btn:hover{
+    background:#d32f2f;
+}
+
+.empty{
+    background:#1d1d1d;
+    border-radius:15px;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.empty i{
+    font-size:55px;
+    color:#FFD54F;
+    margin-bottom:20px;
+}
+
+.empty h2{
+    margin-bottom:10px;
+}
+
+.empty p{
+    color:#9e9e9e;
+}
+
+@media(max-width:768px){
+
+    .add-form{
+        flex-direction:column;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .movie-card{
+        flex-direction:column;
+        gap:18px;
+        align-items:flex-start;
+    }
+
+    .delete-btn{
+        width:100%;
+    }
+
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Collection Manager</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Movie Collection Manager</h1>
+        <p>Organize Your Favourite Movies</p>
+    </div>
+
+    <!-- Add Movie Form -->
+    <form action="/add" method="POST" class="add-form">
+
+        <input
+            type="text"
+            name="movie"
+            placeholder="Enter Movie Name"
+            required
+        >
+
+        <button type="submit">
+            <i class="fa-solid fa-plus"></i>
+            Add Movie
+        </button>
+
+    </form>
+
+    <!-- Buttons -->
+
+    <div class="buttons">
+
+        <a href="/sort">
+            <button class="sort-btn">
+                <i class="fa-solid fa-arrow-down-a-z"></i>
+                Sort Movies
+            </button>
+        </a>
+
+        <a href="/clear">
+            <button class="clear-btn">
+                <i class="fa-solid fa-trash"></i>
+                Clear All
+            </button>
+        </a>
+
+    </div>
+
+    <!-- Movie Cards -->
+
+    <div class="movie-container">
+
+        {% if movies %}
+
+            {% for movie in movies %}
+
+            <div class="movie-card">
+
+                <div class="movie-name">
+
+                    <i class="fa-solid fa-film"></i>
+
+                    {{ movie }}
+
+                </div>
+
+                <a href="/delete/{{ movie }}">
+
+                    <button class="delete-btn">
+
+                        <i class="fa-solid fa-trash"></i>
+
+                        Delete
+
+                    </button>
+
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <div class="empty">
+
+                <i class="fa-solid fa-film"></i>
+
+                <h2>No Movies Added Yet</h2>
+
+                <p>Add your first favourite movie above.</p>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>
