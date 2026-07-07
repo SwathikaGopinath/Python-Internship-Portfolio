@@ -1,48 +1,88 @@
-from flask import Flask, render_template, request, redirect, url_for
+# Movie Collection Manager
 
-app = Flask(__name__)
+A Flask-based web application for managing a personal movie collection. Users can add, sort, delete, and clear movies through a clean and responsive web interface.
 
-# Stores movies temporarily while the app is running
-movie_list = []
+## Features
 
+- Add movies
+- Display movie collection
+- Sort movies alphabetically
+- Delete individual movies
+- Clear all movies
+- Prevent duplicate entries
+- Responsive user interface
 
-@app.route("/")
-def home():
-    return render_template("index.html", movies=movie_list)
+## Technologies Used
 
+- Python
+- Flask
+- HTML5
+- CSS3
+- Jinja2
 
-@app.route("/add", methods=["POST"])
-def add_movie():
-    movie = request.form.get("movie", "").strip().upper()
+## Project Structure
 
-    if movie:
-        if movie not in movie_list:
-            movie_list.append(movie)
+```
+Movie_Collection_Manager/
+│
+├── app.py
+├── templates/
+│   └── index.html
+├── static/
+│   └── style.css
+├── README.md
+└── requirements.txt
+```
 
-    return redirect(url_for("home"))
+## Installation
 
+1. Clone the repository
 
-@app.route("/sort")
-def sort_movies():
-    movie_list.sort()
-    return redirect(url_for("home"))
+```bash
+git clone <repository-url>
+```
 
+2. Navigate to the project folder
 
-@app.route("/delete/<movie>")
-def delete_movie(movie):
-    movie = movie.upper()
+```bash
+cd Movie_Collection_Manager
+```
 
-    if movie in movie_list:
-        movie_list.remove(movie)
+3. Install the required package
 
-    return redirect(url_for("home"))
+```bash
+pip install flask
+```
 
+4. Run the application
 
-@app.route("/clear")
-def clear_movies():
-    movie_list.clear()
-    return redirect(url_for("home"))
+```bash
+python app.py
+```
 
+5. Open your browser and visit:
 
-if __name__ == "__main__":
-    app.run(debug=True)
+```
+http://127.0.0.1:5000
+```
+
+## Learning Outcomes
+
+- Flask routing
+- HTML forms and Jinja templates
+- CRUD operations
+- Responsive web design
+- Python list operations
+- Project organization
+
+## Future Enhancements
+
+- Search movies
+- Movie categories
+- Database integration
+- Movie posters
+- User authentication
+
+## Author
+
+Swathika Gopinath
