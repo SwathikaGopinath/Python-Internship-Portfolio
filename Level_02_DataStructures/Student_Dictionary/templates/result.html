@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Student Record</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>Student Record</h1>
+
+        <table>
+
+            {% for key, value in student.items() %}
+
+            <tr>
+
+                <th>{{ key.title() }}</th>
+
+                <td>{{ value }}</td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+        <a href="/">
+            <button class="back-btn">Add Another Student</button>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

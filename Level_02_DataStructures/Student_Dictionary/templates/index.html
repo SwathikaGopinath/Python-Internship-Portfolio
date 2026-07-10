@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Student Entry Portal</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>Student Entry Portal</h1>
+
+            <p>Enter the student's details below.</p>
+
+            <form action="/submit" method="POST">
+
+                <label>Name</label>
+                <input type="text" name="name" required>
+
+                <label>Age</label>
+                <input type="number" name="age" required>
+
+                <label>Current Grade</label>
+                <input type="text" name="grade" required>
+
+                <label>Subject</label>
+                <input type="text" name="subject" required>
+
+                <label>Updated Grade</label>
+                <input type="text" name="updated_grade" required>
+
+                <button type="submit">
+                    Submit
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

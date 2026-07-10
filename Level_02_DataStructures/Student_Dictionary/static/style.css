@@ -1,0 +1,155 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
+}
+
+body{
+
+    background:linear-gradient(135deg,#7accea,#457b9d);
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.card{
+
+    width:450px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.card h1{
+
+    text-align:center;
+
+    color:#03576e;
+
+    margin-bottom:10px;
+}
+
+.card p{
+
+    text-align:center;
+
+    color:gray;
+
+    margin-bottom:25px;
+}
+
+label{
+
+    display:block;
+
+    margin-top:15px;
+
+    margin-bottom:5px;
+
+    font-weight:600;
+}
+
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:16px;
+}
+
+input:focus{
+
+    outline:none;
+
+    border:2px solid #19cdfa;
+}
+
+button{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#19cdfa;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+button:hover{
+
+    background:#457b9d;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:20px;
+}
+
+th,td{
+
+    border:1px solid #ddd;
+
+    padding:14px;
+}
+
+th{
+
+    background:#54d0f3;
+
+    color:white;
+
+    width:40%;
+}
+
+tr:nth-child(even){
+
+    background:#f5f5f5;
+}
+
+.back-btn{
+
+    margin-top:25px;
+}
