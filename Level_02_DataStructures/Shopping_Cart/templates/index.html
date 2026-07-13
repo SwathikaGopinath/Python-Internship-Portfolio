@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Cart Price Analyzer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🛒 Shopping Cart Price Analyzer</h1>
+
+    <p>Add products and analyze your shopping cart.</p>
+
+    <form method="POST" class="form">
+
+        <input
+            type="text"
+            name="item"
+            placeholder="Item Name"
+            required>
+
+        <input
+            type="number"
+            name="price"
+            placeholder="Price"
+            min="1"
+            required>
+
+        <button
+            type="submit"
+            name="action"
+            value="add">
+
+            Add Item
+
+        </button>
+
+    </form>
+
+    {% if cart %}
+
+    <table>
+
+        <tr>
+            <th>Item</th>
+            <th>Price (₹)</th>
+        </tr>
+
+        {% for item, price in cart %}
+
+        <tr>
+
+            <td>{{ item }}</td>
+
+            <td>₹ {{ price }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <form method="POST">
+
+        <button
+            class="analyze"
+            type="submit"
+            name="action"
+            value="analyze">
+
+            Analyze Cart
+
+        </button>
+
+    </form>
+
+    {% endif %}
+
+    {% if expensive_item %}
+
+    <div class="cards">
+
+        <div class="card expensive">
+
+            <h2>💎 Most Expensive</h2>
+
+            <h3>{{ expensive_item[0] }}</h3>
+
+            <p>₹ {{ expensive_item[1] }}</p>
+
+        </div>
+
+        <div class="card cheap">
+
+            <h2>💰 Cheapest</h2>
+
+            <h3>{{ cheap_item[0] }}</h3>
+
+            <p>₹ {{ cheap_item[1] }}</p>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>
