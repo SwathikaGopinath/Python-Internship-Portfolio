@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Unique Words Finder</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Unique Words Finder</h1>
+
+    <form method="POST">
+
+        <textarea
+            name="sentence"
+            placeholder="Enter a sentence..."
+            required></textarea>
+
+        <button type="submit">
+            Find Unique Words
+        </button>
+
+    </form>
+
+    {% if unique_words %}
+
+    <div class="result">
+
+        <h2>Unique Words</h2>
+
+        <ul>
+
+            {% for word in unique_words %}
+
+            <li>{{ word }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+        <h2>Duplicates Removed</h2>
+
+        <p>{{ duplicate_count }}</p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
